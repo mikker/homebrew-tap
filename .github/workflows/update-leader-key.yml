@@ -1,0 +1,81 @@
+name: Update Leader Key
+
+on:
+  schedule:
+    # Check for updates daily at 10 AM UTC
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Check for Leader Key updates
+        id: check_update
+        run: |
+          # Get current version from formula
+          current_version=$(grep 'version' Casks/leader-key.rb | sed 's/.*"\(.*\)".*/\1/')
+          echo "Current version: $current_version"
+
+          # Check latest version from appcast
+          latest_version=$(curl -s "https://mikker.github.io/LeaderKey.app/appcast.xml" | grep -o 'sparkle:version="[^"]*"' | head -1 | sed 's/sparkle:version="//;s/"//')
+          echo "Latest version: $latest_version"
+
+          if [ "$current_version" != "$latest_version" ]; then
+            echo "Update available: $current_version -> $latest_version"
+            echo "needs_update=true" >> $GITHUB_OUTPUT
+            echo "new_version=$latest_version" >> $GITHUB_OUTPUT
+          else
+            echo "No update needed"
+            echo "needs_update=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update formula
+        if: steps.check_update.outputs.needs_update == 'true'
+        run: |
+          new_version="${{ steps.check_update.outputs.new_version }}"
+
+          # Download new version and get SHA256
+          url="https://github.com/mikker/LeaderKey.app/releases/download/v${new_version}/Leader.Key.app.zip"
+          sha256=$(curl -sL "$url" | shasum -a 256 | cut -d' ' -f1)
+
+          # Update cask
+          sed -i "s/version \".*\"/version \"$new_version\"/" Casks/leader-key.rb
+          sed -i "s/sha256 \".*\"/sha256 \"$sha256\"/" Casks/leader-key.rb
+
+          # Commit changes
+          git add Casks/leader-key.rb
+          git commit -m "Update Leader Key to v${new_version}"
+
+      - name: Create Pull Request
+        if: steps.check_update.outputs.needs_update == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: update-leader-key-${{ steps.check_update.outputs.new_version }}
+          title: "Update Leader Key to v${{ steps.check_update.outputs.new_version }}"
+          body: |
+            Automated update of Leader Key from Sparkle appcast.
+
+            **Changes:**
+            - Updates version to v${{ steps.check_update.outputs.new_version }}
+            - Updates SHA256 checksum
+
+            This PR was created automatically by checking the Sparkle appcast at:
+            https://mikker.github.io/LeaderKey.app/appcast.xml
+          labels: pr-pull
