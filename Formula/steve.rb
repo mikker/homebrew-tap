@@ -4,11 +4,11 @@ class Steve < Formula
   license "MIT"
 
   if Hardware::CPU.arm?
-    url "https://github.com/mikker/steve/releases/download/v0.3.1/steve-macos-arm64.tar.gz"
-    sha256 "fb4451df4627a87be0f288f9f31e73c7476147c1a207d3fbea29e19b4d263b70"
+    url "https://github.com/mikker/steve/releases/download/v0.4.0/steve-macos-arm64.tar.gz"
+    sha256 "1108f8c743214aa3416ee39afbade7479e2d6eb97480ac894d4366965a95e495"
   else
-    url "https://github.com/mikker/steve/releases/download/v0.3.1/steve-macos-x86_64.tar.gz"
-    sha256 "ecbc3ad5335bcbb8d2cc253558a51cbebc4581d75d518ff07414ba75a4aa99e6"
+    url "https://github.com/mikker/steve/releases/download/v0.4.0/steve-macos-x86_64.tar.gz"
+    sha256 "eef4c4d15db1bcce82e06fe568d1eaf83b57b3f14549188d1e85079ae17be251"
   end
 
   depends_on :macos
