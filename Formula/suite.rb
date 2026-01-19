@@ -1,26 +1,25 @@
 class Suite < Formula
   desc "Tiny TUI task runner with hotkeys, split output, and YAML config"
   homepage "https://github.com/mikker/dude_suite"
-  version "0.3.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/mikker/dude_suite/releases/download/v#{version}/suite-v#{version}-darwin-arm64.tar.gz"
-      sha256 "7bc36375007b8973d20bda05658048d26461389bd7c5a5721880bc99a6561f8a"
+      url "https://github.com/mikker/dude_suite/releases/download/v0.3.2/suite-macos-arm64.tar.gz"
+      sha256 "0bd30c49832ff5c4067eb1c77b9f61a64ebd832979bd8e070338dc5210f12f15"
     else
-      url "https://github.com/mikker/dude_suite/releases/download/v#{version}/suite-v#{version}-darwin-amd64.tar.gz"
-      sha256 "5577f96a9659a26f120e821dccfffa5a56118a955a75544cf887c92119f9296e"
+      url "https://github.com/mikker/dude_suite/releases/download/v0.3.2/suite-macos-x86_64.tar.gz"
+      sha256 "cdaa63d88f95ce5125f1ad3347c27b90b11c56eee8494eb0e47b3ae1d2fa74af"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/mikker/dude_suite/releases/download/v#{version}/suite-v#{version}-linux-arm64.tar.gz"
-      sha256 "cafc75b0383384653e0fee08aa7e463bc4428eed0a1d78208901a7b484d02a4d"
+      url "https://github.com/mikker/dude_suite/releases/download/v0.3.2/suite-linux-arm64.tar.gz"
+      sha256 "426d2a08eaaccd56d9d2960a8ab2714955ee607626dca6a438bbf39cdf44bd1f"
     else
-      url "https://github.com/mikker/dude_suite/releases/download/v#{version}/suite-v#{version}-linux-amd64.tar.gz"
-      sha256 "8e2a001b2edf2bde903d89208fc43c9366d3e0329826431c66a1685f54dc5a4b"
+      url "https://github.com/mikker/dude_suite/releases/download/v0.3.2/suite-linux-x86_64.tar.gz"
+      sha256 "d4fa767f8aa6971f2ea0c058f80177a2ad1c3194e45cf4c18af45811de335dca"
     end
   end
 
