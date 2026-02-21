@@ -5,21 +5,21 @@ class Suite < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/mikker/dude_suite/releases/download/v0.3.2/suite-macos-arm64.tar.gz"
-      sha256 "0bd30c49832ff5c4067eb1c77b9f61a64ebd832979bd8e070338dc5210f12f15"
+      url "https://github.com/mikker/dude_suite/releases/download/v0.4.0/suite-macos-arm64.tar.gz"
+      sha256 "2c318622ecf525f8dbe709c52b919bdc1759719bc44c48dec7ca5fd2b6113b42"
     else
-      url "https://github.com/mikker/dude_suite/releases/download/v0.3.2/suite-macos-x86_64.tar.gz"
-      sha256 "cdaa63d88f95ce5125f1ad3347c27b90b11c56eee8494eb0e47b3ae1d2fa74af"
+      url "https://github.com/mikker/dude_suite/releases/download/v0.4.0/suite-macos-x86_64.tar.gz"
+      sha256 "72981b55fb93191b4a0daa1b33e010567d4b6e9e52ff5ae5033a47d2eb4a4f5f"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/mikker/dude_suite/releases/download/v0.3.2/suite-linux-arm64.tar.gz"
-      sha256 "426d2a08eaaccd56d9d2960a8ab2714955ee607626dca6a438bbf39cdf44bd1f"
+      url "https://github.com/mikker/dude_suite/releases/download/v0.4.0/suite-linux-arm64.tar.gz"
+      sha256 "60472b6d65a90749f62839eb6c2ece5f0040da0d0e864839127b9acf6ac9ecda"
     else
-      url "https://github.com/mikker/dude_suite/releases/download/v0.3.2/suite-linux-x86_64.tar.gz"
-      sha256 "d4fa767f8aa6971f2ea0c058f80177a2ad1c3194e45cf4c18af45811de335dca"
+      url "https://github.com/mikker/dude_suite/releases/download/v0.4.0/suite-linux-x86_64.tar.gz"
+      sha256 "e448af56c19e3acddcbe25249773933b9aad1cd546a050a73bea6c516996982c"
     end
   end
 
