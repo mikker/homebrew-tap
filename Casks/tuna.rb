@@ -1,8 +1,8 @@
 cask("tuna") do
-  version("0.47")
-  sha256("6b9c88f88f5cfa8186c6ea3684d9343ab089f18c142fea137674b34f1be6dc7a")
+  version("0.48")
+  sha256("ec712513e6e85b92fcf64d56177c40c286412d515bc52178aca701985c2eae6d")
 
-  url("https://tunaformac.com/download/releases/1042")
+  url("https://tunaformac.com/download/releases/1046")
   name("Tuna")
   desc("Modern launcher")
   homepage("https://tunaformac.com/")
