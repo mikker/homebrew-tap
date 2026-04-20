@@ -1,6 +1,6 @@
 cask("moves") do
-  version("1.8.0")
-  sha256("c1476ffc9835468ed7b4a214521fa046a1be3b7724eaab6085c49f7d6589d376")
+  version("1.9.3")
+  sha256("01551d1d215e60b9d075151168572d3d9c580444e4cc05e585e91d6999dd59bc")
 
   url(
     "https://github.com/mikker/Moves.app/releases/download/v#{version}/Moves.app.zip",
@@ -9,6 +9,7 @@ cask("moves") do
   name("Moves")
   desc("Position your windows juuust right")
   homepage("https://getmoves.app")
+  auto_updates(true)
 
   livecheck do
     url("https://mikker.github.io/Moves.app/appcast.xml")
