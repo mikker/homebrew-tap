@@ -4,13 +4,15 @@ cask("leader-key") do
 
   url("https://github.com/mikker/LeaderKey.app/releases/download/v#{version}/Leader.Key.app.zip")
   name("Leader Key")
-  desc("The faster than your launcher launcher")
+  desc("Faster than your launcher launcher")
   homepage("https://github.com/mikker/LeaderKey.app")
 
   livecheck do
     url("https://mikker.github.io/LeaderKey.app/appcast.xml")
     strategy(:sparkle, &:short_version)
   end
+
+  depends_on :macos
 
   app("Leader Key.app")
 
@@ -19,7 +21,7 @@ cask("leader-key") do
       "~/Library/Application Support/Leader Key",
       "~/Library/Caches/com.mikker.Leader-Key",
       "~/Library/Preferences/com.mikker.Leader-Key.plist",
-      "~/Library/Saved Application State/com.mikker.Leader-Key.savedState"
-    ]
+      "~/Library/Saved Application State/com.mikker.Leader-Key.savedState",
+    ],
   )
 end

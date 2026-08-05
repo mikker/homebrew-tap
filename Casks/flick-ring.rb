@@ -4,7 +4,7 @@ cask("flick-ring") do
 
   url(
     "https://flick-ring-updates.s3.amazonaws.com/FlickRing.b32.zip",
-    verified: "flick-ring-updates.s3.amazonaws.com/"
+    verified: "flick-ring-updates.s3.amazonaws.com/",
   )
   name("FlickRing")
   desc("Action ring for your normie mouse")
@@ -15,6 +15,8 @@ cask("flick-ring") do
     strategy(:sparkle, &:short_version)
   end
 
+  depends_on :macos
+
   app("FlickRing.app")
 
   zap(
@@ -22,7 +24,7 @@ cask("flick-ring") do
       "~/Library/Application Support/FlickRing",
       "~/Library/Caches/com.mikker.FlickRing",
       "~/Library/Preferences/com.mikker.FlickRing.plist",
-      "~/Library/Saved Application State/com.mikker.FlickRing.savedState"
-    ]
+      "~/Library/Saved Application State/com.mikker.FlickRing.savedState",
+    ],
   )
 end

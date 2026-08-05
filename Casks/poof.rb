@@ -4,7 +4,7 @@ cask "poof" do
 
   url "https://github.com/mikker/poof/releases/download/v#{version.csv.first}/Poof-#{version.csv.first}-#{version.csv.second}.zip"
   name "Poof"
-  desc "macOS text snippet expander"
+  desc "Text snippet expander"
   homepage "https://github.com/mikker/poof"
 
   auto_updates true

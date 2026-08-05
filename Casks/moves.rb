@@ -4,17 +4,19 @@ cask("moves") do
 
   url(
     "https://github.com/mikker/Moves.app/releases/download/v#{version}/Moves.app.zip",
-    verified: "github.com/mikker/Moves.app/"
+    verified: "github.com/mikker/Moves.app/",
   )
   name("Moves")
   desc("Position your windows juuust right")
-  homepage("https://getmoves.app")
-  auto_updates(true)
+  homepage("https://getmoves.app/")
 
   livecheck do
     url("https://mikker.github.io/Moves.app/appcast.xml")
     strategy(:sparkle, &:short_version)
   end
+
+  auto_updates(true)
+  depends_on :macos
 
   app("Moves.app")
 
@@ -23,7 +25,7 @@ cask("moves") do
       "~/Library/Application Support/Moves",
       "~/Library/Caches/com.mikker.Moves",
       "~/Library/Preferences/com.mikker.Moves.plist",
-      "~/Library/Saved Application State/com.mikker.Moves.savedState"
-    ]
+      "~/Library/Saved Application State/com.mikker.Moves.savedState",
+    ],
   )
 end
