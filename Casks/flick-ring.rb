@@ -1,30 +1,29 @@
 cask("flick-ring") do
-  version("1.2.3")
-  sha256(:no_check)
+  version("1.3.0")
+  sha256("21a3a7f4fb8204cbd827d14563855d8b39bf7e26650f316d5fa338810af55be9")
 
   url(
-    "https://flick-ring-updates.s3.amazonaws.com/FlickRing.b32.zip",
-    verified: "flick-ring-updates.s3.amazonaws.com/",
+    "https://github.com/mikker/FlickRing/releases/download/v#{version}/FlickRing.app.zip",
+    verified: "github.com/mikker/FlickRing/"
   )
   name("FlickRing")
   desc("Action ring for your normie mouse")
-  homepage("https://github.com/mikker/FlickRing.app")
+  homepage("https://github.com/mikker/FlickRing")
+  auto_updates(true)
 
   livecheck do
-    url("https://flick-ring-updates.s3.amazonaws.com/appcast.xml")
+    url("https://mikker.github.io/FlickRing/appcast.xml")
     strategy(:sparkle, &:short_version)
   end
-
-  depends_on :macos
 
   app("FlickRing.app")
 
   zap(
     trash: [
       "~/Library/Application Support/FlickRing",
-      "~/Library/Caches/com.mikker.FlickRing",
-      "~/Library/Preferences/com.mikker.FlickRing.plist",
-      "~/Library/Saved Application State/com.mikker.FlickRing.savedState",
-    ],
+      "~/Library/Caches/com.brnbw.FlickRing",
+      "~/Library/Preferences/com.brnbw.FlickRing.plist",
+      "~/Library/Saved Application State/com.brnbw.FlickRing.savedState"
+    ]
   )
 end
