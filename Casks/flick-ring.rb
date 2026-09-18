@@ -1,6 +1,6 @@
 cask("flick-ring") do
-  version("1.3.2")
-  sha256("accc834b975d1939ee7bfaa8279d0ed6f399588d9cf6c610761026a24d775036")
+  version("1.3.3")
+  sha256("b1cc9706ebf7901c41cc0fd756bf3e1dddefd7934873dae85a800786989587a4")
 
   url(
     "https://github.com/mikker/FlickRing/releases/download/v#{version}/FlickRing.app.zip",
