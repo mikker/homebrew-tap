@@ -1,6 +1,6 @@
 cask "fst" do
-  version "0.1.0"
-  sha256 "15c37bf8b5e35575d14916ec771d35e5ab285a7b295a822e8603b0c70dbbb70a"
+  version "0.1.1"
+  sha256 "1ac42f6932d2f853211127150ea2539c1953ed499d987b6a56a70ad70707163f"
 
   url "https://github.com/mikker/Fst/releases/download/v#{version}/Fst.app.zip"
   name "Fst"
