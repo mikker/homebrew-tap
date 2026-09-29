@@ -1,11 +1,11 @@
 cask "dinky" do
-  version "0.3"
-  sha256 "e981f98d18b29d832caee130ce01d3fea0f4d259355962c8088cf5fa9fde293b"
+  version "0.4"
+  sha256 "fc3a147a19e2fc45729d9962c9910b22f495c9123decac576d04e172e3136c2e"
 
   url "https://github.com/mikker/Dinky/releases/download/v#{version}/dinky.app.zip"
   name "dinky"
   desc "Tiling window manager for macOS on native Spaces, with SIP left on"
-  homepage "https://mikker.github.io/Dinky/"
+  homepage "https://dinky.rodeo/"
 
   livecheck do
     url "https://github.com/mikker/Dinky/releases/latest/download/appcast.xml"
