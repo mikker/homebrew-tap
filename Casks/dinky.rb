@@ -1,6 +1,6 @@
 cask "dinky" do
-  version "0.8"
-  sha256 "eaaee7a2a08eb117855881180b4b60dfe48194c67b60c6fba5ac3327ae332f32"
+  version "0.9"
+  sha256 "7cd1e4557234e49f41eebe833ca93467428b5e869f2bfc643aa6620bba8c9b8c"
 
   url "https://github.com/mikker/Dinky/releases/download/v#{version}/dinky.app.zip"
   name "dinky"
