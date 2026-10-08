@@ -1,6 +1,6 @@
 cask "dinky" do
-  version "0.13"
-  sha256 "9ec177051d7496db78d4f51df8c3acdc0f74d4334628942329a309f3d3ad24ff"
+  version "0.14"
+  sha256 "edf84dd10932f5a37f588f29fcc86b7b9ef445c7772f7e4ab47650144b00082b"
 
   url "https://github.com/mikker/Dinky/releases/download/v#{version}/dinky.app.zip"
   name "dinky"
@@ -13,7 +13,7 @@ cask "dinky" do
   end
 
   auto_updates true
-  depends_on macos: :golden_gate
+  depends_on macos: ">= :sequoia"
 
   app "dinky.app"
   binary "#{appdir}/dinky.app/Contents/MacOS/dinky"
