@@ -7,7 +7,7 @@ cask "fst" do
   desc "Fast, minimal native text editor"
   homepage "https://github.com/mikker/Fst"
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   livecheck do
     url "https://github.com/mikker/Fst/releases/latest/download/appcast.xml"
