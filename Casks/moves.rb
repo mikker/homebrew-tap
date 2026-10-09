@@ -2,10 +2,7 @@ cask("moves") do
   version("1.10.2")
   sha256("2877afb7a090733107d76a30e87d82cef4be012d2337f50d7d62629590c5c2b9")
 
-  url(
-    "https://github.com/mikker/Moves.app/releases/download/v#{version}/Moves.app.zip",
-    verified: "github.com/mikker/Moves.app/"
-  )
+  url("https://github.com/mikker/Moves.app/releases/download/v#{version}/Moves.app.zip")
   name("Moves")
   desc("Position your windows juuust right")
   homepage("https://getmoves.app")
