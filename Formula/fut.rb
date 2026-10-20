@@ -3,11 +3,11 @@ class Fut < Formula
   homepage "https://fut.sh"
 
   if Hardware::CPU.arm?
-    url "https://github.com/mikker/fut/releases/download/0.38/fut-macos-arm64.tar.gz"
-    sha256 "c1cfcb23a56459057fad196d3f055350d0f1e2a550c0e961b3bacfe64f2f8c7f"
+    url "https://github.com/mikker/fut/releases/download/0.39/fut-macos-arm64.tar.gz"
+    sha256 "f71dfa4ec631ed6e35d775b255e69138408d21aa10dd9ffaf14c13451f317f07"
   else
-    url "https://github.com/mikker/fut/releases/download/0.38/fut-macos-x86_64.tar.gz"
-    sha256 "c9c030530aace06861f86e48d4efe1bb620ef41fe958eebd4591183c44dde272"
+    url "https://github.com/mikker/fut/releases/download/0.39/fut-macos-x86_64.tar.gz"
+    sha256 "32102fe85428b7bd60c96fc0a63f94005b7437de63d95eb196ac3cd968556664"
   end
 
   depends_on :macos
