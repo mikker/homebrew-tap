@@ -2,10 +2,7 @@ cask("flick-ring") do
   version("1.3.3")
   sha256("b1cc9706ebf7901c41cc0fd756bf3e1dddefd7934873dae85a800786989587a4")
 
-  url(
-    "https://github.com/mikker/FlickRing/releases/download/v#{version}/FlickRing.app.zip",
-    verified: "github.com/mikker/FlickRing/"
-  )
+  url("https://github.com/mikker/FlickRing/releases/download/v#{version}/FlickRing.app.zip")
   name("FlickRing")
   desc("Action ring for your normie mouse")
   homepage("https://github.com/mikker/FlickRing")
